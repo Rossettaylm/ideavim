@@ -3,27 +3,29 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
-
+noremap <SPACE> <NOP>
 let mapleader=" "
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-set scrolloff=10
+" set scrolloff=10
 
 " Do incremental searching.
 set incsearch
 set ignorecase
-
-" copy from my vimrc
 set cursorline
-set notimeout
+" set notimeout
+set timeoutlen=1000
 set wrap
 set tw=0
 set smartcase
 set visualbell
 set clipboard=unnamed
 set idearefactormode=keep
+" keep cursor center
+set so=999
+set showmode
 
 " some plugin for ideavim
 set which-key
@@ -41,21 +43,28 @@ nnoremap Q gq
 nnoremap q :quit<CR>
 noremap <C-q> :quitall!<CR>
 nnoremap S :w<CR>
+
+" 抑制在d、c和p命令下的复制行为
+" cut with no clipboard
+noremap <leader>d "_d
+noremap c "_c
+noremap C "_C
+" replace currently selected text with default register without yanking it
+vnoremap p "_dP
+
+" indent
 nnoremap < <<
 nnoremap > >>
+vnoremap > >gv
+vnoremap < <gv
+inoremap ;; <ESC>A
+inoremap ,, <ESC>ea,<ESC>w
+
+" switch case
 nnoremap ` ~
 nmap ? <Action>(Find)
 
 noremap <silent> <leader><CR> :nohlsearch<CR>
-
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
-" Plug 'machakann/vim-highlightedyank'
-" set highlightedyank
-" Commentary plugin
-" Plug 'tpope/vim-commentary'
-
 
 " insert keymap
 inoremap jj <ESC>
@@ -70,7 +79,6 @@ noremap ( ^
 noremap ) $
 
 nnoremap U <C-R>
-inoremap jk <ESC>A
 
 " 与系统剪贴板交互
 nmap Y yiw
@@ -151,13 +159,13 @@ map ga <Action>(ShowUsages)
 map gs <Action>(GotoSuperMethod)
 vmap gc <Action>(CommentByLineComment)
 nmap gc <Action>(CommentByLineComment)
-map <leader>cf <Action>(ReformatCode)
-map <leader>co <Action>(OptimizeImports)
-map <leader>. <Action>(ShowIntentionActions)
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>co <Action>(OptimizeImports)
+nmap <leader>. <Action>(ShowIntentionActions)
 
 " git
-map <leader>ga <Action>(Annotate)
-map <leader>gg <Action>(ActivateVersionControlToolWindow)
+map gl <Action>(Annotate)
+map gp <Action>(ActivateVersionControlToolWindow)
 
 " show/hide all window
 map <leader>ha <Action>(HideAllWindows)
