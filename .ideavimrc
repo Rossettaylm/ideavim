@@ -64,7 +64,7 @@ inoremap ,, <ESC>ea,<ESC>w
 nnoremap ` ~
 nmap ? <Action>(Find)
 
-noremap <silent> <leader><CR> :nohlsearch<CR>
+" noremap <silent> <leader><CR> :nohlsearch<CR>
 
 " insert keymap
 inoremap jj <ESC>
@@ -114,6 +114,7 @@ map <leader>sy <Action>(Android.SyncProject)
 " navigation
 nmap <leader><leader> <Action>(RecentFiles)
 nmap <leader>, <Action>(GotoFile)
+nmap <leader><cr> <Action>(SearchEverywhere)
 nmap <leader>ps <Action>(GotoSymbol)
 nmap <leader>pt <Action>(TextSearchAction)
 nmap <leader>pa <Action>(GotoAction)
@@ -159,7 +160,7 @@ map ga <Action>(ShowUsages)
 map gs <Action>(GotoSuperMethod)
 vmap gc <Action>(CommentByLineComment)
 nmap gc <Action>(CommentByLineComment)
-nmap <leader>cf <Action>(ReformatCode)
+vmap <leader>fm <Action>(ReformatCode)
 nmap <leader>co <Action>(OptimizeImports)
 nmap <leader>. <Action>(ShowIntentionActions)
 
