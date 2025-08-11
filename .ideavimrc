@@ -1,0 +1,186 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+let mapleader=" "
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+
+" Do incremental searching.
+set incsearch
+set ignorecase
+
+" copy from my vimrc
+set cursorline
+set notimeout
+set wrap
+set tw=0
+set smartcase
+set visualbell
+set clipboard=unnamed
+set idearefactormode=keep
+
+" some plugin for ideavim
+set which-key
+set quickscope
+Plug 'tpope/vim-surround'
+
+" surround with
+" ysi[from_range][to_range]
+" cs[from_range][to_range]
+" yss[range] -- surround curl line in range
+" yssb -- surround cur line in bracket
+
+" Don't use Ex mode, use Q for formatting.
+nnoremap Q gq
+nnoremap q :quit<CR>
+noremap <C-q> :quitall!<CR>
+nnoremap S :w<CR>
+nnoremap < <<
+nnoremap > >>
+nnoremap ` ~
+nmap ? <Action>(Find)
+
+noremap <silent> <leader><CR> :nohlsearch<CR>
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+" Plug 'machakann/vim-highlightedyank'
+" set highlightedyank
+" Commentary plugin
+" Plug 'tpope/vim-commentary'
+
+
+" insert keymap
+inoremap jj <ESC>
+
+" move
+noremap J 7j
+noremap K 7k
+noremap L 7l
+noremap H 7h
+noremap ; :
+noremap ( ^
+noremap ) $
+
+nnoremap U <C-R>
+inoremap jk <ESC>A
+
+" 与系统剪贴板交互
+nmap Y yiw
+nmap P viwp
+
+"复制上一条记录
+nnoremap <leader>p "0p
+
+noremap <leader>sj :split<CR>
+noremap <leader>sl :vsplit<CR>
+
+noremap = nzz
+noremap - Nzz
+
+" vnoremap <CR> <ESC>
+
+" debug
+nmap \da <Action>(AndroidConnectDebuggerAction)
+nmap \d, <Action>(Resume)
+nmap \d. <Action>(Stop)
+nmap \dn <Action>(StepOver)
+nmap \di <Action>(StepInto)
+nmap \do <Action>(StepOut)
+
+" breakpoint
+nmap \bb <Action>(ViewBreakpoints)
+nmap \bp <Action>(BreakpointActionsGroup)
+nmap \ba <Action>(ToggleLineBreakpoint)
+
+" sync
+map <leader>sy <Action>(Android.SyncProject)
+
+" navigation
+nmap <leader><leader> <Action>(RecentFiles)
+nmap <leader>, <Action>(GotoFile)
+nmap <leader>ps <Action>(GotoSymbol)
+nmap <leader>pt <Action>(TextSearchAction)
+nmap <leader>pa <Action>(GotoAction)
+nmap <leader>pc <Action>(GotoClass)
+nmap <leader>pp <Action>(SearchEverywhere)
+nmap <leader>o  <Action>(FileStructurePopup)
+nmap <leader>y <Action>(CopyReference)
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
+nmap [[ <Action>(Back)
+nmap ]] <Action>(Forward)
+
+" 快速定位
+noremap <leader>kf ?fun\s\+\w\+<cr>w
+noremap <leader>kc ?class\s\+\w\+<cr>w
+noremap <leader>ko ?object\s\+\w\+<cr>w
+noremap <leader>ki ?interface\s\+\w\+<cr>w
+map s <Action>(flash.search)
+
+" move when completion
+map <C-p> <Action>(EditorUp)
+map <C-n> <Action>(EditorDown)
+
+" reload ideavimrc
+nmap <S-r> <Action>(IdeaVim.ReloadVimRc.reload)
+nmap <leader>vm <Action>(VimActions)
+nmap zm <Action>(ToggleZenMode)
+
+" select when visual mode
+nmap <cr> <Action>(EditorSelectWord)
+vmap <cr> <Action>(Find)
+" yank current word and search it
+" noremap <leader>sw yiw/<C-r>"<CR>
+
+" code action
+map gh <Action>(ShowHoverInfo)
+map ge <Action>(GotoNextError)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map ga <Action>(ShowUsages)
+map gs <Action>(GotoSuperMethod)
+vmap gc <Action>(CommentByLineComment)
+nmap gc <Action>(CommentByLineComment)
+map <leader>cf <Action>(ReformatCode)
+map <leader>co <Action>(OptimizeImports)
+map <leader>. <Action>(ShowIntentionActions)
+
+" git
+map <leader>ga <Action>(Annotate)
+map <leader>gg <Action>(ActivateVersionControlToolWindow)
+
+" show/hide all window
+map <leader>ha <Action>(HideAllWindows)
+
+" bookmark
+nmap <leader>ba <Action>(ToggleBookmark)
+nmap <leader>bb <Action>(ShowBookmarks)
+
+" refactor
+map <leader>rn <Action>(RenameElement)
+vmap <leader>ef <Action>(ExtractFunction)
+map <leader>ev <Action>(IntroduceVariable)
+map <leader>cs <Action>(ChangeSignature)
+
+" translate
+map <leader>ts <Action>($EditorTranslateAction)
+
+" zip/unzip
+nmap <leader>zp <Action>(CollapseAllRegions)
+nmap <leader>zo <Action>(ExpandAllRegions)
+
+" jump to window
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
