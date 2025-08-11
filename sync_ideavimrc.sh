@@ -29,16 +29,16 @@ cp "$SOURCE_FILE" "$TARGET_FILE"
 echo "[$CURRENT_DATE] 文件复制完成: $SOURCE_FILE -> $TARGET_FILE" >> "$LOG_FILE"
 
 # 检查是否有变更
-if git diff --quiet HEAD -- .ideavimrc 2>/dev/null; then
-    echo "[$CURRENT_DATE] 文件没有变更，跳过提交" >> "$LOG_FILE"
-    exit 0
-fi
+# if git diff --quiet HEAD -- .ideavimrc 2>/dev/null; then
+#     echo "[$CURRENT_DATE] 文件没有变更，跳过提交" >> "$LOG_FILE"
+#     exit 0
+# fi
 
 # 添加到 git 暂存区
-git add .ideavimrc
+git add .
 
 # 提交变更
-COMMIT_MESSAGE="同步 .ideavimrc 配置文件 - $(date '+%Y-%m-%d')"
+COMMIT_MESSAGE="同步 .ideavimrc 配置文件 - $CURRENT_DATE"
 git commit -m "$COMMIT_MESSAGE"
 
 echo "[$CURRENT_DATE] Git 提交完成: $COMMIT_MESSAGE" >> "$LOG_FILE"
@@ -51,4 +51,4 @@ else
     exit 1
 fi
 
-echo "[$CURRENT_DATE] 同步完成" >> "$LOG_FILE"
+echo "[$CURRENT_DATE] 同步完成\n" >> "$LOG_FILE"
