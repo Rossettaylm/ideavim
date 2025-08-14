@@ -58,7 +58,7 @@ nnoremap > >>
 vnoremap > >gv
 vnoremap < <gv
 inoremap ;; <ESC>A
-inoremap ,, <ESC>ea,<ESC>w
+" inoremap ,, <ESC>ea,<ESC>w
 
 " switch case
 nnoremap ` ~
@@ -114,7 +114,7 @@ map <leader>sy <Action>(Android.SyncProject)
 " navigation
 nmap <leader><leader> <Action>(RecentFiles)
 nmap <leader>, <Action>(GotoFile)
-nmap <leader><cr> <Action>(SearchEverywhere)
+nmap <leader><cr> <Action>(GotoAction)
 nmap <leader>ps <Action>(GotoSymbol)
 nmap <leader>pt <Action>(TextSearchAction)
 nmap <leader>pa <Action>(GotoAction)
@@ -122,12 +122,12 @@ nmap <leader>pc <Action>(GotoClass)
 nmap <leader>pp <Action>(SearchEverywhere)
 nmap <leader>o  <Action>(FileStructurePopup)
 nmap <leader>y <Action>(CopyReference)
-nmap [b <Action>(PreviousTab)
-nmap ]b <Action>(NextTab)
-nmap [f <Action>(MethodUp)
-nmap ]f <Action>(MethodDown)
-nmap [[ <Action>(Back)
-nmap ]] <Action>(Forward)
+map [b <Action>(PreviousTab)
+map ]b <Action>(NextTab)
+map [f <Action>(MethodUp)
+map ]f <Action>(MethodDown)
+map [[ <Action>(Back)
+map ]] <Action>(Forward)
 
 " 快速定位
 noremap <leader>kf ?fun\s\+\w\+<cr>w
@@ -172,8 +172,8 @@ map gp <Action>(ActivateVersionControlToolWindow)
 map <leader>ha <Action>(HideAllWindows)
 
 " bookmark
-nmap <leader>ba <Action>(ToggleBookmark)
-nmap <leader>bb <Action>(ShowBookmarks)
+nmap ma <Action>(ToggleBookmark)
+nmap mm <Action>(ShowBookmarks)
 
 " refactor
 map <leader>rn <Action>(RenameElement)
