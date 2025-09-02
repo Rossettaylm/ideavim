@@ -30,6 +30,7 @@ set showmode
 " some plugin for ideavim
 set which-key
 set quickscope
+set keep-english-in-normal-and-restore-in-insert
 Plug 'tpope/vim-surround'
 
 " surround with
@@ -116,24 +117,25 @@ nmap <leader><leader> <Action>(RecentFiles)
 nmap <leader>, <Action>(GotoFile)
 nmap <leader><cr> <Action>(GotoAction)
 nmap <leader>ps <Action>(GotoSymbol)
-nmap <leader>pt <Action>(TextSearchAction)
+map <leader>pt <Action>(TextSearchAction)
 nmap <leader>pa <Action>(GotoAction)
 nmap <leader>pc <Action>(GotoClass)
-nmap <leader>pp <Action>(SearchEverywhere)
+map <leader>pp <Action>(SearchEverywhere)
 nmap <leader>o  <Action>(FileStructurePopup)
 nmap <leader>y <Action>(CopyReference)
+" 快速定位
 map [b <Action>(PreviousTab)
 map ]b <Action>(NextTab)
 map [f <Action>(MethodUp)
 map ]f <Action>(MethodDown)
 map [[ <Action>(Back)
 map ]] <Action>(Forward)
-
-" 快速定位
-noremap <leader>kf ?fun\s\+\w\+<cr>w
-noremap <leader>kc ?class\s\+\w\+<cr>w
-noremap <leader>ko ?object\s\+\w\+<cr>w
-noremap <leader>ki ?interface\s\+\w\+<cr>w
+noremap [c ?class\s\+\w\+<cr>w
+noremap ]c /class\s\+\w\+<cr>w
+noremap [o ?object\s\+\w\+<cr>w
+noremap ]o /object\s\+\w\+<cr>w
+noremap [i ?interface\s\+\w\+<cr>w
+noremap ]i /interface\s\+\w\+<cr>w
 map s <Action>(flash.search)
 
 " move when completion
