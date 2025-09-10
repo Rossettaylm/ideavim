@@ -25,6 +25,7 @@ set clipboard=unnamed
 set idearefactormode=keep
 " keep cursor center
 set so=999
+set scrolloff=10
 set showmode
 
 " some plugin for ideavim
