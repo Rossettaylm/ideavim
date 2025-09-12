@@ -163,8 +163,8 @@ map ga <Action>(ShowUsages)
 map gs <Action>(GotoSuperMethod)
 vmap gc <Action>(CommentByLineComment)
 nmap gc <Action>(CommentByLineComment)
-vmap <leader>fm <Action>(ReformatCode)
-nmap <leader>co <Action>(OptimizeImports)
+vmap gfm <Action>(ReformatCode)
+nmap go <Action>(OptimizeImports)
 nmap <leader>. <Action>(ShowIntentionActions)
 
 " git
