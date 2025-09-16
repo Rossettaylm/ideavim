@@ -163,7 +163,7 @@ map ga <Action>(ShowUsages)
 map gs <Action>(GotoSuperMethod)
 vmap gc <Action>(CommentByLineComment)
 nmap gc <Action>(CommentByLineComment)
-vmap gfm <Action>(ReformatCode)
+vmap <leader>fm <Action>(ReformatCode)
 nmap go <Action>(OptimizeImports)
 nmap <leader>. <Action>(ShowIntentionActions)
 
