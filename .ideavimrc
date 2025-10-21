@@ -187,9 +187,9 @@ map <leader>cs <Action>(ChangeSignature)
 " translate
 map <leader>ts <Action>($EditorTranslateAction)
 
-" zip/unzip
-nmap <leader>zp <Action>(CollapseAllRegions)
-nmap <leader>zo <Action>(ExpandAllRegions)
+" collapseAll/expandAll
+nmap <leader>ca <Action>(CollapseAllRegions)l
+nmap <leader>ea <Action>(ExpandAllRegions)
 
 " jump to window
 nmap <C-h> <C-w>h
