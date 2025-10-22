@@ -188,8 +188,10 @@ map <leader>cs <Action>(ChangeSignature)
 map <leader>ts <Action>($EditorTranslateAction)
 
 " collapseAll/expandAll
-nmap <leader>ca <Action>(CollapseAllRegions)l
-nmap <leader>ea <Action>(ExpandAllRegions)
+nmap co <Action>(CollapseRegion)
+nmap ep <Action>(ExpandRegion)
+nmap <leader>co <Action>(CollapseAllRegions)/{<CR>
+nmap <leader>ep <Action>(ExpandAllRegions)
 
 " jump to window
 nmap <C-h> <C-w>h
