@@ -60,6 +60,7 @@ nnoremap > >>
 vnoremap > >gv
 vnoremap < <gv
 inoremap ;; <ESC>A
+inoremap jk <ESC>A
 " inoremap ,, <ESC>ea,<ESC>w
 
 " switch case
@@ -124,7 +125,8 @@ nmap <leader>pc <Action>(GotoClass)
 map <leader>pp <Action>(SearchEverywhere)
 nmap <leader>o  <Action>(FileStructurePopup)
 nmap <leader>y <Action>(CopyReference)
-" 快速定位
+
+" 快速定位 quick move
 map [b <Action>(PreviousTab)
 map ]b <Action>(NextTab)
 map [f <Action>(MethodUp)
@@ -138,6 +140,7 @@ noremap ]o /object\s\+\w\+<cr>w
 noremap [i ?interface\s\+\w\+<cr>w
 noremap ]i /interface\s\+\w\+<cr>w
 map s <Action>(flash.search)
+nmap <leader>si <Action>(flash.treesitter)
 
 " move when completion
 map <C-p> <Action>(EditorUp)
