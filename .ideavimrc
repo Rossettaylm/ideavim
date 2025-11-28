@@ -36,12 +36,10 @@ Plug 'tpope/vim-surround'
 
 " surround with
 " ysi[from_range][to_range]
-" cs[from_range][to_range]
-" yss[range] -- surround curl line in range
+" cs[from_range][to_range] change surround " to '
+" yss[range] -- surround current line in range
 " yssb -- surround cur line in bracket
 
-" Don't use Ex mode, use Q for formatting.
-nnoremap Q gq
 nnoremap q :quit<CR>
 noremap <C-q> :quitall!<CR>
 nnoremap S :w<CR>
