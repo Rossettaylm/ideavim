@@ -14,17 +14,17 @@ let mapleader=" "
 " Do incremental searching.
 set incsearch
 set ignorecase
-set cursorline
+"set cursorline
 " set notimeout
 set timeoutlen=1000
 set wrap
 set tw=0
 set smartcase
-set visualbell
+"set visualbell
 set clipboard=unnamed
 set idearefactormode=keep
 " keep cursor center
-set so=999
+set so=10
 set scrolloff=10
 set showmode
 
@@ -46,7 +46,7 @@ nnoremap S :w<CR>
 
 " 抑制在d、c和p命令下的复制行为
 " cut with no clipboard
-noremap <leader>d "_d
+" noremap <leader>d "_d
 noremap c "_c
 noremap C "_C
 " replace currently selected text with default register without yanking it
@@ -62,7 +62,7 @@ inoremap jk <ESC>A
 " inoremap ,, <ESC>ea,<ESC>w
 
 " switch case
-nnoremap ` ~
+noremap ` ~
 nmap ? <Action>(Find)
 
 " noremap <silent> <leader><CR> :nohlsearch<CR>
