@@ -137,16 +137,16 @@ noremap [o ?object\s\+\w\+<cr>w
 noremap ]o /object\s\+\w\+<cr>w
 noremap [i ?interface\s\+\w\+<cr>w
 noremap ]i /interface\s\+\w\+<cr>w
-nmap s <Action>(flash.search)
-xmap s <Action>(flash.search)
-nmap f <Action>(flash.find)
-xmap f <Action>(flash.find)
-nmap F <Action>(flash.find_backward)
-xmap F <Action>(flash.find_backward)
-nmap t <Action>(flash.till)
-xmap t <Action>(flash.till)
-nmap T <Action>(flash.till_backward)
-xmap T <Action>(flash.till_backward)
+"nmap s <Action>(flash.search)
+"xmap s <Action>(flash.search)
+"nmap f <Action>(flash.find)
+"xmap f <Action>(flash.find)
+"nmap F <Action>(flash.find_backward)
+"xmap F <Action>(flash.find_backward)
+"nmap t <Action>(flash.till)
+"xmap t <Action>(flash.till)
+"nmap T <Action>(flash.till_backward)
+"xmap T <Action>(flash.till_backward)
 
 nmap <leader>si <Action>(flash.treesitter)
 
